@@ -1,0 +1,86 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background-color: hsl(233deg, 47%, 7%);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 59.75rem;
+  border: 5px red solid;
+}
+
+.object {
+  display: flex;
+  flex-direction: column;
+  width: 20.4375rem;
+  height: 48.625rem;
+  border: green solid 2px;
+  background-color: hsl(244deg, 38%, 16%);
+}
+.object__image {
+  position: relative;
+  margin-bottom: 2.8125rem;
+  background-image: url(../images/image-header-mobile.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 16rem;
+}
+.object__image::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(170, 92, 219, 0.5);
+}
+.object__text {
+  padding: 0 2.1875rem;
+  text-align: center;
+}
+.object__theme {
+  margin-bottom: 23px;
+  color: white;
+  font-size: 1.6875rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+.object__description {
+  margin-bottom: 28px;
+  color: hsla(0deg, 0%, 100%, 0.6);
+  font-size: 0.875rem;
+  line-height: 1.5625rem;
+}
+.object__status {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 205px;
+  align-items: center;
+  text-transform: uppercase;
+  color: white;
+}
+.object__companies {
+  line-height: 1.625rem;
+}
+.object__comnum {
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+}
+.object__comsub {
+  font-family: "Lexend Deca", sans-serif;
+  color: hsla(0deg, 0%, 100%, 0.6);
+  font-size: 0.75rem;
+}/*# sourceMappingURL=style.css.map */

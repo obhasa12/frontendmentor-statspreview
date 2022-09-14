@@ -1,0 +1,25 @@
+@use 'variables' as v; 
+
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: v.$inter;
+    background-color: v.$Verydarkbluemainbackground;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 59.75rem;
+    border: 5px red solid;
+}
