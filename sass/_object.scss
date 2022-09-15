@@ -1,12 +1,22 @@
 @use 'variables' as v;
+@use 'mixins' as m;
 
 .object{
     display: flex;
     flex-direction: column;
     width: 20.4375rem;
     height: 48.625rem;
-    border: green solid 2px;
+    // border: green solid 2px;
+    border-radius: 10px;
+    overflow: hidden;
     background-color: v.$Darkdesaturatedbluecardbackground;
+
+    @include m.breakpoint-up(large){
+        flex-direction: row;
+        width: 65.375rem;
+        height: 383px;
+    }
+
 
     &__image{
         position: relative;
@@ -15,19 +25,39 @@
         background-size: cover;
         width: 100%;
         height: 16rem;
+        @include m.breakpoint-up(large){
+            // flex: 6;
+           order: 2;
+           width: 505px;
+           height: 380px;
+           background-size: cover;
+           background-repeat: no-repeat;
+        }
+    
 
         &::after{
             content: "";
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: rgba(170, 92, 219, 0.5);
+            background-color: rgba(156, 0, 253, 0.4);
         }
     }   
 
     &__text{
         padding: 0 2.1875rem;
         text-align: center;
+
+        @include m.breakpoint-up(large){
+            // flex: 6;
+            order: 1;
+            width: 539px;
+            padding-top: 65px;
+            padding-right: 98px;
+            padding-bottom: 67px;
+            padding-left: 60px;
+            text-align: left;
+         }
     }
 
     &__theme{
@@ -36,6 +66,12 @@
         font-size: 1.6875rem;
         font-weight: 700;
         line-height: 2rem;
+
+        @include m.breakpoint-up(large){
+            font-size: 36px;
+            line-height: 39px;
+         }
+
     }
 
     &__description{
@@ -43,34 +79,51 @@
         color: v.$Slightlytransparenwhitestatheadings;
         font-size: 0.875rem;
         line-height: 1.5625rem;
+
+        @include m.breakpoint-up(large){
+            font-size: 15px;
+         }
+
     }
 
     &__status{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        padding-bottom: 0.825rem;
         height: 205px;
         align-items: center;
         text-transform: uppercase;
         color: white;
+        letter-spacing: 0.0625rem;
+        @include m.breakpoint-up(large){
+            flex-direction: row;
+            height: 100px;
+            padding-right: 39px;
+         }
+        
     }
 
     &__companies{
         line-height: 1.625rem;
     }
-    &__comnum{
+    &__comnum,&__temnum,&__quenum{
         font-weight: 700;
+        font-size: 1.375rem;
         text-transform: lowercase;
-        letter-spacing: 1px;
+        // letter-spacing: 0.0625rem;
     }
 
-    &__comsub{
-
+    &__comsub,&__temsub,&__quesub{
         font-family: v.$lexed;
         color: v.$Slightlytransparenwhitestatheadings;
         font-size: 0.75rem;
+        // letter-spacing: 0.0625rem;
     }
 
+    &__quenum{
+        text-transform : uppercase;
+    }
 
 
 
